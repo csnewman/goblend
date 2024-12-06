@@ -1,0 +1,28 @@
+//go:build darwin
+
+package runtime
+
+//go:cgo_import_dynamic __stderrp __stderrp "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic abort abort "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic fprintf fprintf "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic free free "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic fwrite fwrite "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic malloc malloc "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic nanosleep nanosleep "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_attr_init pthread_attr_init "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_attr_setdetachstate pthread_attr_setdetachstate "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_attr_setstacksize pthread_attr_setstacksize "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_cond_broadcast pthread_cond_broadcast "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_cond_wait pthread_cond_wait "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_create pthread_create "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_get_stackaddr_np pthread_get_stackaddr_np "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_get_stacksize_np pthread_get_stacksize_np "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_key_create pthread_key_create "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_mutex_lock pthread_mutex_lock "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_mutex_unlock pthread_mutex_unlock "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_self pthread_self "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_setspecific pthread_setspecific "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic pthread_sigmask pthread_sigmask "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic setenv setenv "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic strerror strerror "/usr/lib/libSystem.B.dylib"
+//go:cgo_import_dynamic unsetenv unsetenv "/usr/lib/libSystem.B.dylib"
