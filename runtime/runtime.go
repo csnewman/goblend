@@ -17,9 +17,8 @@ var _cgo_init = &goblend_cgo_init
 var goblend_cgo_thread_start byte
 var _cgo_thread_start = &goblend_cgo_thread_start
 
-//go:linkname goblend_cgo_pthread_key_created goblend_cgo_pthread_key_created
 //go:linkname _cgo_pthread_key_created _cgo_pthread_key_created
-var goblend_cgo_pthread_key_created byte
+var goblend_cgo_pthread_key_created uintptr
 var _cgo_pthread_key_created = &goblend_cgo_pthread_key_created
 
 //go:linkname x_crosscall2_ptr x_crosscall2_ptr

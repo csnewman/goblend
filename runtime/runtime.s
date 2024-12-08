@@ -10,10 +10,6 @@ TEXT goblend_cgo_thread_start(SB),NOSPLIT|NOFRAME,$0-0
   JMP x_cgo_thread_start(SB)
   RET
 
-TEXT goblend_cgo_pthread_key_created(SB),NOSPLIT|NOFRAME,$0-0
-  JMP x_cgo_pthread_key_created(SB)
-  RET
-
 TEXT goblend_cgo_bindm(SB),NOSPLIT|NOFRAME,$0-0
   JMP x_cgo_bindm(SB)
   RET
