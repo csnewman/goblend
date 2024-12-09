@@ -1,7 +1,7 @@
-DARWIN_ARM64_FILES := gcc_libinit.c gcc_stack_darwin.c gcc_darwin_arm64.c gcc_arm64.S gcc_util.c gcc_setenv.c gcc_sigaction.c
-LINUX_COMMON_FILES := gcc_libinit.c gcc_stack_unix.c  gcc_util.c gcc_setenv.c linux_syscall.c gcc_mmap.c gcc_sigaction.c
+DARWIN_ARM64_FILES := gcc_libinit.c gcc_stack_darwin.c gcc_darwin_arm64.c gcc_arm64.S gcc_util.c gcc_setenv.c gcc_sigaction.c gcc_context.c
+LINUX_COMMON_FILES := gcc_libinit.c gcc_stack_unix.c  gcc_util.c gcc_setenv.c linux_syscall.c gcc_mmap.c gcc_sigaction.c gcc_context.c
 LINUX_ARM64_FILES := $(LINUX_COMMON_FILES) gcc_linux_arm64.c gcc_arm64.S
-WINDOWS_COMMON_FILES := gcc_libinit_windows.c gcc_util.c gcc_stack_windows.c gcc_windows_amd64.c
+WINDOWS_COMMON_FILES := gcc_libinit_windows.c gcc_util.c gcc_stack_windows.c gcc_windows_amd64.c gcc_context.c
 WINDOWS_AMD64_FILES := $(WINDOWS_COMMON_FILES) gcc_amd64.S gcc_windows_amd64.c
 
 build-all: linux-arm64 windows-amd64 darwin-arm64

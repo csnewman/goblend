@@ -129,4 +129,32 @@ The `0` argument is the `ptr` to pass to the native function. You can pass and r
 
 ### Callbacks
 
-TODO: Create example and document.
+The pointer to a function can be resolved via `goblend.FuncPtr`:
+
+```go
+func ExampleCallback(ptr uintptr) {
+	// callback logic here
+}
+
+ptr := goblend.FuncPtr(ExampleCallback)
+```
+
+Callbacks must have the above signature and can be invoked via:
+
+```zig
+extern "C" fn _cgo_wait_runtime_init_done() callconv(.C) *const anyopaque;
+extern "C" fn _cgo_release_context(v: *const anyopaque) callconv(.C) void;
+extern "C" fn crosscall2(ptr: *const anyopaque, data: *const anyopaque, size: c_int, ctx: *const anyopaque) callconv(.C) void;
+
+fn someExample(ptr: *const anyopaque) void {
+    var value :u64 = 321;
+
+    const ctx = _cgo_wait_runtime_init_done();
+    crosscall2(ptr, &value, 0, ctx);
+    _cgo_release_context(ctx);
+}
+```
+
+The `ctx` setup and releasing is optional in most circumstances and instead `0`/`null` can be passed, however
+[runtime.SetCgoTraceback](https://pkg.go.dev/runtime#SetCgoTraceback) will not work. `size` appears to be unused in the
+cgo runtime and can be left as 0.
