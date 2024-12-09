@@ -7,7 +7,7 @@ WINDOWS_AMD64_FILES := $(WINDOWS_COMMON_FILES) gcc_amd64.S gcc_windows_amd64.c
 build-all: linux-arm64 windows-amd64 darwin-arm64
 
 linux-arm64:
-	zig build-obj -O ReleaseFast -target aarch64-linux-gnu --library c -femit-bin=runtime_linux_arm64.syso \
+	zig build-obj -O ReleaseSmall -target aarch64-linux-gnu --library c -femit-bin=runtime_linux_arm64.syso \
 		$(LINUX_ARM64_FILES)
 
 windows-amd64:
